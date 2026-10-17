@@ -1,0 +1,302 @@
+{
+  "chapters": [
+    {
+      "summary": "An AI agent uses a model to choose actions, software to carry them out, and evidence to check the result.",
+      "example": "A support agent checks an order and the return policy before proposing a refund. Saying the refund is complete is not enough; the payment record must confirm it.",
+      "outcome": "Explain the difference between a model response, a tool request, and a completed task.",
+      "level": "Start here"
+    },
+    {
+      "summary": "The model can recognize patterns and generate useful responses, but it needs relevant information and checks on its work.",
+      "example": "A larger context window is like a larger desk. It holds more material, but that does not guarantee the important policy exception will be noticed.",
+      "outcome": "Describe tokens, context, training, and embeddings in everyday language.",
+      "level": "Foundations"
+    },
+    {
+      "summary": "Use a fixed workflow when the steps are known. Give the model more freedom when new evidence needs to change the plan.",
+      "example": "Checking an invoice can follow fixed rules. Investigating an unfamiliar delivery failure may require different checks depending on what you find.",
+      "outcome": "Choose a simple design and explain when an agent adds value.",
+      "level": "Foundations"
+    },
+    {
+      "summary": "Record what the agent knows, check every proposed action, and set limits on time, cost, and repeated attempts.",
+      "example": "If an agent keeps looking up the same missing order, the application should stop the loop and ask for a corrected order number.",
+      "outcome": "Explain the steps of a controlled agent loop. The optional code shows how a developer could implement it.",
+      "level": "Building"
+    },
+    {
+      "summary": "A tool needs a clear name, clear inputs, useful results, and predictable error messages.",
+      "example": "Separate preparing a refund from issuing it. The first operation creates a proposal; the second checks permission and changes the payment record.",
+      "outcome": "Write a tool description that makes correct use easier and mistakes easier to recover from.",
+      "level": "Building"
+    },
+    {
+      "summary": "Give the model the evidence it needs now. Keep older information searchable and record where important facts came from.",
+      "example": "A return policy may allow returns for 30 days but exclude opened custom products. A summary must preserve the exception.",
+      "outcome": "Explain context, retrieval, and memory, and diagnose a missing-evidence problem.",
+      "level": "Foundations"
+    },
+    {
+      "summary": "Measure the cost of completing tasks correctly, then improve the part of the process that wastes the most work.",
+      "example": "A cheap attempt that fails often may cost more overall once a person has to resolve the failures.",
+      "outcome": "Compare cost, waiting time, and verified success. Use the calculator to explore the assumptions.",
+      "level": "Improving"
+    },
+    {
+      "summary": "Test real outcomes across many cases, including difficult cases and repeated attempts. Keep a separate final test set.",
+      "example": "A polished answer is still wrong if the agent refunded the wrong order. Check the actual order and payment records.",
+      "outcome": "Design a test that measures correctness, permissions, cost, and repeatability.",
+      "level": "Improving"
+    },
+    {
+      "summary": "A lost response does not always mean an action failed. Save progress and check the real result before repeating a change.",
+      "example": "A refund service may process a refund even if its reply never arrives. Repeating the operation carelessly can pay twice.",
+      "outcome": "Explain checkpoints, stable operation identifiers, and recovery after an uncertain result.",
+      "level": "Building"
+    },
+    {
+      "summary": "The application must enforce what an agent is allowed to read and change, even when the model proposes something else.",
+      "example": "A document can describe the return policy. A hidden instruction inside that document cannot grant permission to export customer records.",
+      "outcome": "Identify the boundary between untrusted content and permitted actions.",
+      "level": "Building"
+    },
+    {
+      "summary": "Multiple agents help when work can be divided clearly. They also add coordination costs and can share the same mistakes.",
+      "example": "Five agents reading the same outdated policy can all agree on the wrong answer. Agreement is not independent evidence.",
+      "outcome": "Define a clear assignment and compare multiple agents with a simpler alternative.",
+      "level": "Advanced"
+    },
+    {
+      "summary": "Advanced work asks how agents handle uncertainty, learn from experience, and justify a claimed improvement.",
+      "example": "Before adding a reviewer agent, test whether it catches errors that actually occur in your workload and whether the benefit justifies the extra cost.",
+      "outcome": "Read research critically and plan a fair experiment. Study the mathematical details when you need them.",
+      "level": "Advanced"
+    },
+    {
+      "summary": "Follow a weekly sequence of learning, building, testing, and explaining. Repeat a topic when its checkpoint is not yet clear.",
+      "example": "In Week 1, make a small simulated agent stop safely and reject an unsupported claim of success.",
+      "outcome": "Choose a realistic weekly schedule and know what evidence each week should produce.",
+      "level": "Plan"
+    },
+    {
+      "summary": "Bring the lessons together in one small, complete project and show another person how to reproduce your results.",
+      "example": "Build a simulated support agent, inject a failure, and demonstrate that recovery does not produce a duplicate refund.",
+      "outcome": "Produce a project, evaluation report, limitations, and a clear explanation of your design.",
+      "level": "Project"
+    },
+    {
+      "summary": "Track changes that could affect your work, verify the original source, and test important claims before adopting them.",
+      "example": "A new framework feature is worth testing if it changes your cost, reliability, or development effort. A launch announcement alone is not a reason to migrate.",
+      "outcome": "Maintain a short research log with a claim, experiment, result, and decision.",
+      "level": "Reference"
+    },
+    {
+      "summary": "Use original documentation and papers to answer a specific project question. Turn each reading into a small deliverable.",
+      "example": "After reading about tool design, rewrite one tool contract and test whether the new version reduces mistakes.",
+      "outcome": "Choose the next source based on the problem you are solving.",
+      "level": "Reference"
+    }
+  ],
+  "glossary": [
+    [
+      "AI agent",
+      "A system that uses an AI model to choose actions, receives results, and continues toward a goal.",
+      1
+    ],
+    [
+      "Language model",
+      "An AI model that processes language and generates responses based on training and supplied information.",
+      2
+    ],
+    [
+      "Workflow",
+      "A defined sequence or arrangement of steps used to complete a task.",
+      3
+    ],
+    [
+      "Tool",
+      "An operation the application lets the model request, such as looking up an order.",
+      5
+    ],
+    [
+      "API",
+      "Application programming interface. A defined way for one program to request information or an operation from another.",
+      4
+    ],
+    [
+      "JSON",
+      "A text format that stores structured data as named fields, lists, and values.",
+      4
+    ],
+    [
+      "Schema",
+      "A description of the fields, types, and structure a piece of data must follow.",
+      4
+    ],
+    [
+      "State",
+      "The application's current record of a task, including known facts and unfinished work.",
+      4
+    ],
+    [
+      "Context",
+      "The instructions, history, tool results, and other information supplied to a model for a response.",
+      6
+    ],
+    [
+      "Token",
+      "A unit of content processed by a model, often a word fragment or punctuation mark for text.",
+      2
+    ],
+    [
+      "Embedding",
+      "A list of numbers representing content so a system can compare it with other content.",
+      2
+    ],
+    [
+      "RAG",
+      "Retrieval-augmented generation. Looking up relevant information and using it to help prepare an answer.",
+      6
+    ],
+    [
+      "Memory",
+      "Information stored for use in later steps or conversations. It needs checks for accuracy, scope, and freshness.",
+      6
+    ],
+    [
+      "Provenance",
+      "The origin of a fact or result, including its source and relevant version.",
+      6
+    ],
+    [
+      "Inference",
+      "Using a trained model to process a request and produce a response.",
+      2
+    ],
+    [
+      "Fine-tuning",
+      "Further training that changes a model's learned parameters using additional data.",
+      12
+    ],
+    [
+      "Harness",
+      "The software around a model that manages tools, state, limits, execution, and checks.",
+      1
+    ],
+    [
+      "Evaluation",
+      "A structured test with a task, starting conditions, and rules for judging the result.",
+      8
+    ],
+    [
+      "Baseline",
+      "A simpler or existing system used as the reference for a comparison.",
+      8
+    ],
+    [
+      "Holdout",
+      "Test cases reserved for final evaluation rather than used to develop the system.",
+      8
+    ],
+    [
+      "Trace",
+      "A record of what happened during a run, including model calls, tool requests, results, and timing.",
+      9
+    ],
+    [
+      "Latency",
+      "How long a response or operation takes. p50 is the median; p95 is the time at or below which 95% of measured requests finish.",
+      7
+    ],
+    [
+      "Calibration",
+      "Checking whether a confidence estimate matches how often the system is actually correct.",
+      2
+    ],
+    [
+      "Ablation",
+      "An experiment that removes or changes one component to investigate its contribution.",
+      12
+    ],
+    [
+      "Checkpoint",
+      "A saved point in a task's progress from which work can resume.",
+      9
+    ],
+    [
+      "Idempotency key",
+      "A stable operation identifier that a supporting service uses to recognize repeated requests for the same intended action.",
+      9
+    ],
+    [
+      "Reconciliation",
+      "Checking the actual result in the responsible system and bringing other records into agreement with it.",
+      9
+    ],
+    [
+      "Prompt injection",
+      "Content encountered by an agent that attempts to redirect its behavior or misuse its access.",
+      10
+    ],
+    [
+      "Authorization",
+      "The application's decision about whether a particular user or system may perform a particular operation.",
+      10
+    ],
+    [
+      "Sandbox",
+      "An isolated execution environment with limits on what code can access and change.",
+      10
+    ],
+    [
+      "MCP",
+      "Model Context Protocol. A standard for connecting model applications with tools and information.",
+      11
+    ],
+    [
+      "A2A",
+      "Agent2Agent. A protocol for interaction between agent systems, including descriptions of capabilities and task status.",
+      11
+    ],
+    [
+      "POMDP",
+      "Partially observable Markov decision process. A mathematical framework for choosing actions when the full situation is not directly visible.",
+      12
+    ],
+    [
+      "Reward hacking",
+      "Getting a high score by exploiting the scoring rules rather than achieving the intended outcome.",
+      12
+    ],
+    [
+      "Deterministic rule",
+      "A rule that produces the same result for the same inputs, such as calculating a refund from a fixed price and quantity.",
+      3
+    ],
+    [
+      "Benchmark",
+      "A defined set of tasks and scoring rules used to compare systems. Its results apply to that test setup.",
+      12
+    ],
+    [
+      "Grader",
+      "Software, a model, or a person that judges a result against stated criteria.",
+      8
+    ],
+    [
+      "Reinforcement learning",
+      "Training that adjusts behavior using rewards for actions or outcomes.",
+      12
+    ],
+    [
+      "Precision and recall",
+      "Precision asks how many selected items are relevant. Recall asks how many of the relevant items were found. The exact items and relevance rules must be defined.",
+      6
+    ],
+    [
+      "Policy",
+      "A set of business rules in a support workflow. In reinforcement learning, the same word means a strategy for choosing actions.",
+      12
+    ]
+  ]
+}

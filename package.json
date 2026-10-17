@@ -1,0 +1,9 @@
+{
+  "name": "agentic-ai-practical-guide",
+  "version": "2.0.0",
+  "private": true,
+  "description": "Source tools for a self-contained HTML learning guide. Hosting needs only the generated HTML.",
+  "type": "module",
+  "scripts": { "build": "node build-html.mjs" },
+  "devDependencies": { "marked": "17.0.5" }
+}
