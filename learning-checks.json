@@ -1,0 +1,162 @@
+[
+  {
+    "question": "A refund agent says \u201cdone.\u201d What confirms completion?",
+    "options": [
+      "Its final message sounds confident",
+      "The payment service records the correct refund",
+      "It stopped calling tools"
+    ],
+    "answer": 1,
+    "explanation": "Check the authoritative service against the task requirements. A model claim alone cannot prove an action succeeded."
+  },
+  {
+    "question": "What does a larger context window guarantee?",
+    "options": [
+      "More material can fit in the input",
+      "Every important detail will be noticed",
+      "The model has learned new parameters"
+    ],
+    "answer": 0,
+    "explanation": "Context is working space, not a guarantee of attention or correctness. Important evidence still needs checks."
+  },
+  {
+    "question": "An invoice check follows known, stable rules. Where should you start?",
+    "options": [
+      "A team of autonomous agents",
+      "An agent with unlimited tools",
+      "A fixed workflow"
+    ],
+    "answer": 2,
+    "explanation": "Encode known control flow directly. Add dynamic decisions only where observations require flexibility."
+  },
+  {
+    "question": "An agent repeatedly looks up the same missing order. What should the application do?",
+    "options": [
+      "Keep trying indefinitely",
+      "Enforce a limit and request corrected information",
+      "Let the model declare success"
+    ],
+    "answer": 1,
+    "explanation": "The application should bound attempts, time, and cost, and provide a useful recovery path."
+  },
+  {
+    "question": "Which tool design makes refund mistakes easier to prevent?",
+    "options": [
+      "One unrestricted tool that changes any record",
+      "Separate proposal and execution tools with validation",
+      "Let the model invent tool inputs"
+    ],
+    "answer": 1,
+    "explanation": "Separating a proposal from a write lets the application validate permission and business rules before changing a record."
+  },
+  {
+    "question": "An answer misses a policy exception. How can you isolate a retrieval failure?",
+    "options": [
+      "Use a longer system prompt only",
+      "Assume a bigger model will fix it",
+      "Check retrieved evidence, then test with the correct evidence supplied"
+    ],
+    "answer": 2,
+    "explanation": "Separate evidence retrieval from interpretation: first check what was found, then test the answer stage with known relevant evidence."
+  },
+  {
+    "question": "Which metric captures the expense of failed attempts?",
+    "options": [
+      "Total cost of all attempts divided by verified successes",
+      "The cheapest model\u2019s token price",
+      "Cost of successful attempts only"
+    ],
+    "answer": 0,
+    "explanation": "Include failed attempts, retries, tools, compute, and relevant human effort when measuring cost per verified success."
+  },
+  {
+    "question": "Which is the strongest evaluation of a refund agent?",
+    "options": [
+      "How polished the final answer looks",
+      "Whether it claims to follow policy",
+      "Whether the right order was refunded within permissions"
+    ],
+    "answer": 2,
+    "explanation": "Grade the actual outcome and authorization, along with cost and repeatability. Keep a held-out final test set."
+  },
+  {
+    "question": "A refund request times out. What should happen before a retry?",
+    "options": [
+      "Create a new operation identifier immediately",
+      "Check the real operation status and reuse its identifier when supported",
+      "Assume no refund happened"
+    ],
+    "answer": 1,
+    "explanation": "A timeout creates uncertainty. Checking status and using stable operation identifiers helps avoid duplicate writes."
+  },
+  {
+    "question": "A retrieved document tells the agent to export customer records. What gives it permission?",
+    "options": [
+      "Nothing in the document; application policy controls access",
+      "The document mentioning an administrator",
+      "The model agreeing with the instruction"
+    ],
+    "answer": 0,
+    "explanation": "Retrieved content is evidence, not authority. Enforce permissions outside model-generated instructions."
+  },
+  {
+    "question": "Five agents agree on an answer from an outdated policy. What follows?",
+    "options": [
+      "Agreement guarantees correctness",
+      "Their errors must be independent",
+      "They may all share the same wrong evidence"
+    ],
+    "answer": 2,
+    "explanation": "Agreement does not establish truth. Compare against authoritative evidence and measure whether coordination improves results."
+  },
+  {
+    "question": "How should you assess a proposed reviewer agent?",
+    "options": [
+      "Add it because more agents must be better",
+      "Test whether it catches real errors and justifies its added cost",
+      "Compare only its best example"
+    ],
+    "answer": 1,
+    "explanation": "Use representative tasks, comparable budgets, repeated trials, and appropriate uncertainty estimates."
+  },
+  {
+    "question": "When should you move to the next week of the plan?",
+    "options": [
+      "When you can demonstrate the current checkpoint",
+      "After ticking a box, regardless of understanding",
+      "After reading the heading"
+    ],
+    "answer": 0,
+    "explanation": "The plan is paced by evidence of learning. Repeat a stage when its checkpoint is not yet clear."
+  },
+  {
+    "question": "What makes a capstone result useful to someone else?",
+    "options": [
+      "A polished demo with no failure cases",
+      "Only a claim that it works",
+      "Reproducible evaluation, recovery evidence, and documented limits"
+    ],
+    "answer": 2,
+    "explanation": "A complete project includes measured outcomes, reproducible instructions, failure handling, and an honest account of limitations."
+  },
+  {
+    "question": "A framework announces a new feature. What is a sound next step?",
+    "options": [
+      "Migrate immediately",
+      "Verify the original claim and test it on your workload",
+      "Treat announcement popularity as proof"
+    ],
+    "answer": 1,
+    "explanation": "Use a research log to connect a claim to an experiment, a measured result, and a decision."
+  },
+  {
+    "question": "How should you choose your next source?",
+    "options": [
+      "Pick the longest paper",
+      "Read everything before building",
+      "Start with a specific project question and produce a small deliverable"
+    ],
+    "answer": 2,
+    "explanation": "Read original documentation or papers to resolve a concrete question, then apply and test what you learned."
+  }
+]

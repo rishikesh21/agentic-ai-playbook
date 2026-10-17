@@ -12,6 +12,9 @@ A practical, self-paced guide to understanding AI agents and learning to build r
 - Interactive cost and reliability calculators.
 - Search, printable content, and Markdown downloads.
 - Browser-local progress and notes, with JSON export and import.
+- Mobile bottom navigation, a dismissible menu, adjustable reading text, and reading progress.
+- 16 chapter checks with instant feedback and automatic completion on a correct answer.
+- A “Mark complete & continue” action, completed badges, and review-card completion controls.
 
 New to the topic? Read Chapters 1 to 3, then Chapter 6. Ready to implement a project? Follow the 12-week plan and budget roughly 8 to 10 hours per week. See [START-HERE.md](START-HERE.md) for more guidance.
 
@@ -38,6 +41,7 @@ The generated site contains its content, styles, and JavaScript in one HTML file
 | --- | --- |
 | `STUDY-GUIDE.md` | Main chapter content |
 | `PRACTICE-WORKBOOK.md` | Exercises, answers, projects, and templates |
+| `learning-checks.json` | Chapter questions, answer options, and feedback |
 | `learning-notes.json` | Chapter summaries, examples, outcomes, and glossary |
 | `study-template.html` | Page structure and styling |
 | `app.js` | Navigation, search, progress, calculators, and other interactions |
@@ -55,7 +59,7 @@ See [GITHUB-PAGES.md](GITHUB-PAGES.md) for deployment details and troubleshootin
 
 ## Progress and privacy
 
-Progress and notes stay in your browser; the guide does not send them to a server. Use **Export progress** to back them up and **Import progress** to restore them. Changing browsers or site addresses creates a separate storage location, and clearing browser data may remove progress.
+Progress and notes stay in your browser; the guide does not send them to a server. Use **Export progress** to back them up and **Import progress** to restore them. Changing browsers or site addresses creates a separate storage location, and clearing browser data may remove progress. A correct chapter check automatically records completion; readers can also mark chapters, exercises, study weeks, and review cards complete or incomplete themselves. Completion records activity, rather than certifying mastery.
 
 ## Contributions
 

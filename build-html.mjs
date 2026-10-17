@@ -8,6 +8,8 @@ const guide = await fs.readFile(path.join(root, 'STUDY-GUIDE.md'), 'utf8');
 const workbook = await fs.readFile(path.join(root, 'PRACTICE-WORKBOOK.md'), 'utf8');
 const render = md => marked.parse(md, { gfm: true });
 const notes = JSON.parse(await fs.readFile(path.join(root, 'learning-notes.json'), 'utf8'));
+const checks = JSON.parse(await fs.readFile(path.join(root, 'learning-checks.json'), 'utf8'));
+if (checks.length !== 16 || checks.some(c => !c.question || c.options.length !== 3 || !Number.isInteger(c.answer) || c.answer < 0 || c.answer > 2 || !c.explanation)) throw new Error('Every chapter needs a valid learning check');
 const intro = guide.split(/^## 1\./m)[0];
 const modules = [...guide.matchAll(/^## (\d+)\. (.+)\n([\s\S]*?)(?=^## \d+\.|$(?![\s\S]))/gm)].map(m => ({id:Number(m[1]),title:m[2],html:render(m[3]), ...notes.chapters[Number(m[1])-1], minutes:Math.max(2,Math.ceil(m[3].split(/\s+/).length/180))}));
 if(notes.chapters.length!==16) throw new Error('Every chapter needs editorial notes');
@@ -33,7 +35,7 @@ const cards = [
  ['How do pass@k and pass^k differ?', 'Define notation explicitly. At-least-one success measures candidate search; all-k success measures repeatability. Their independent-trial formulas are 1−(1−p)^k and p^k.'],
  ['What makes an architecture comparison fair?', 'Comparable tasks, environments, grading, versions, resource budgets, and latency objectives, with repeated trials and appropriate uncertainty estimates.']
 ];
-const data = JSON.stringify({modules,questions,cards,glossary:notes.glossary,guideMarkdown:guide,workbookMarkdown:workbook,intro:render(intro),workbookIntro:render(workbook.slice(0,workbook.indexOf('## Part A:'))),extras:render(workbookExtras)}).replaceAll('<','\\u003c');
+const data = JSON.stringify({modules,questions,cards,checks,glossary:notes.glossary,guideMarkdown:guide,workbookMarkdown:workbook,intro:render(intro),workbookIntro:render(workbook.slice(0,workbook.indexOf('## Part A:'))),extras:render(workbookExtras)}).replaceAll('<','\\u003c');
 const template = await fs.readFile(path.join(root,'study-template.html'),'utf8');
 const app = await fs.readFile(path.join(root, 'app.js'), 'utf8');
 const fallback = render(guide+'\n\n'+workbook);
