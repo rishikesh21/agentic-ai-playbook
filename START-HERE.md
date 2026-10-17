@@ -2,9 +2,9 @@
 
 Editorial edition: 17 October 2026.
 
-Open [index.html](index.html) in a browser to use the interactive guide. The file also works directly from disk.
+Open the [interactive guide](https://rishikesh21.github.io/agentic-ai-playbook/) in your browser. To use it offline, follow the [local build instructions](README.md#run-locally), then open the generated `index.html` directly from disk.
 
-To publish it, follow [GITHUB-PAGES.md](GITHUB-PAGES.md). The clean `github-pages` folder contains the files to upload. Hosting needs no build step, server, API key, or external JavaScript library.
+Updates pushed to `main` are built and published automatically by GitHub Actions. See [GITHUB-PAGES.md](GITHUB-PAGES.md) for deployment details. The generated website needs no server, API key, or external JavaScript library.
 
 ## Where to begin
 

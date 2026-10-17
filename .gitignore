@@ -1,0 +1,5 @@
+node_modules/
+/index.html
+/github-pages/
+.DS_Store
+npm-debug.log*
